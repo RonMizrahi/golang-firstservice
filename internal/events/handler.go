@@ -2,15 +2,20 @@ package events
 
 import (
 	"net/http"
-	"restapi/internal/events/model"
 
 	"math/rand/v2"
 
 	"github.com/gin-gonic/gin"
 )
 
+func EventRoutes(server *gin.RouterGroup) {
+	// Define the route for handling events
+	server.GET("/", GetEvent)
+	server.POST("/", CreateEvent)
+}
+
 func CreateEvent(c *gin.Context) {
-	var req model.Event
+	var req Event
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
