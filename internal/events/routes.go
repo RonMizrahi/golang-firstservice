@@ -9,4 +9,5 @@ import (
 func EventRoutes(server *gin.RouterGroup) {
 	// Define the route for handling events
 	server.GET("/", GetEvent)
+	server.POST("/", CreateEvent)
 }

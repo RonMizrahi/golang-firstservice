@@ -8,8 +8,8 @@ import (
 
 func main() {
 	server := gin.Default()
-	api := server.Group("/api/event") // base path like /api/
-	events.EventRoutes(api)
+	eventGroup := server.Group("/api/event") // base path like /api/
+	events.EventRoutes(eventGroup)
 
 	server.Run("127.0.0.1:8080")
 }
