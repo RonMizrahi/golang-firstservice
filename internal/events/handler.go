@@ -1,4 +1,4 @@
-package handlers
+package events
 
 import (
 	"github.com/gin-gonic/gin"

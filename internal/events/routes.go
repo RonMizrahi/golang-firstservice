@@ -1,8 +1,6 @@
-package routes
+package events
 
 import (
-	"restapi/internal/handlers"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,5 +8,5 @@ import (
 
 func EventRoutes(server *gin.RouterGroup) {
 	// Define the route for handling events
-	server.GET("/event", handlers.GetEvent)
+	server.GET("/", GetEvent)
 }
